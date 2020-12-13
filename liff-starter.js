@@ -60,7 +60,7 @@ function initializeLiff(myLiffId) {
                 })
                 .catch((err) => {
                     console.log('error', err);
-                })
+                });
             initializeApp();
         })
 
