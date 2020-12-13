@@ -27,6 +27,26 @@ window.onload = function() {
 };
 
 
+            // Using a Promise object
+            liff
+            .init({
+              liffId: "1655319185-OBQL1nQE" // use own liffId
+            })
+            .then(() => {
+              // Start to use liff's api
+            })
+            .catch((err: LiffError) => {
+              // Error happens during initialization
+              console.log(err.code, err.message);
+            });
+          
+            liff.getProfile()
+          .then(profile => {
+            const name = profile.displayName
+          })
+          .catch((err) => {
+            console.log('error', err);
+          });
 
 /**
 * Check if myLiffId is null. If null do not initiate liff.
