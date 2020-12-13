@@ -135,6 +135,27 @@
                 </table>
             </div>
 
+            // Using a Promise object
+liff
+  .init({
+    liffId: "1234567890-abcedfgh" // use own liffId
+  })
+  .then(() => {
+    // Start to use liff's api
+  })
+  .catch((err: LiffError) => {
+    // Error happens during initialization
+    console.log(err.code, err.message);
+  });
+
+  liff.getProfile()
+.then(profile => {
+  const name = profile.displayName
+})
+.catch((err) => {
+  console.log('error', err);
+});
+
             <!-- LOGIN LOGOUT BUTTONS -->
             <div class="buttonGroup">
                 <button id="liffLoginButton" class="btn btn-success btn-small">Masuk</button>

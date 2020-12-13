@@ -26,13 +26,7 @@ window.onload = function() {
     }
 };
 
-liff.getProfile()
-.then(profile => {
-  const name = profile.displayName
-})
-.catch((err) => {
-  console.log('error', err);
-});
+
 
 /**
 * Check if myLiffId is null. If null do not initiate liff.
