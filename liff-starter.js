@@ -53,13 +53,22 @@ function initializeLiff(myLiffId) {
         })
         .then(() => {
             // start to use LIFF's api
+            liff.getProfile()
+                .then(profile => {
+                    const name = profile.displayName
+                    $('#namaUser').html(name);
+                })
             initializeApp();
         })
         .catch((err) => {
             document.getElementById("liffAppContent").classList.add('hidden');
             document.getElementById("liffInitErrorMessage").classList.remove('hidden');
         });
+
+
 }
+
+
 
 /**
  * Initialize the app by calling functions handling individual app components
