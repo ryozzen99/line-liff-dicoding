@@ -31,7 +31,7 @@ function loadCatatan() {
 
         }
         else {
-            data_app = "Catatan masih kosong nih";
+            data_app = "Barang masih kosong nih";
         }
 
 
@@ -89,11 +89,11 @@ function simpanData() {
     } else {
         liff.sendMessages([{
             'type': 'text',
-            'text': "Catatan baru berhasil disimpan"
+            'text': "Data berhasil disimpan"
         }]).then(function() {
-            alert('Catatan Tersimpan');
+            alert('Barang Tersimpan');
         }).catch(function(error) {
-            alert('Aduh kok error ya...');
+            alert('Data Error');
         });
     }
 
@@ -127,11 +127,11 @@ function simpanEditData() {
     } else {
         liff.sendMessages([{
             'type': 'text',
-            'text': "Catatan yang diedit sudah tersimpan"
+            'text': "Barang Di Ubah"
         }]).then(function() {
-            alert('Catatan tersimpan');
+            alert('Barang tersimpan');
         }).catch(function(error) {
-            alert('Aduh kok error ya...');
+            alert('Data Error');
         });
     }
 
@@ -155,11 +155,11 @@ function hapusData(id) {
     } else {
         liff.sendMessages([{
             'type': 'text',
-            'text': "Catatan sudah terhapus"
+            'text': "Barang Dihapus"
         }]).then(function() {
-            alert('Catatan sudah dihapus');
+            alert('Barang sudah dihapus');
         }).catch(function(error) {
-            alert('Aduh kok nggak bisa');
+            alert('Data Error');
         });
     }
 
