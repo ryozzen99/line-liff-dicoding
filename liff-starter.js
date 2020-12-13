@@ -59,15 +59,6 @@ function initializeLiff(myLiffId) {
             document.getElementById("liffAppContent").classList.add('hidden');
             document.getElementById("liffInitErrorMessage").classList.remove('hidden');
         });
-
-    liff
-        .getProfile()
-        .then(profile => {
-            const name = profile.displayName
-        })
-        .catch((err) => {
-            console.log('error', err);
-        });
 }
 
 /**
@@ -93,7 +84,6 @@ function initializeApp() {
 function displayLiffData() {
     document.getElementById('isInClient').textContent = liff.isInClient();
     document.getElementById('isLoggedIn').textContent = liff.isLoggedIn();
-    document.getElementById('getProfile').textContent = liff.getProfile();
 }
 
 /**
@@ -149,7 +139,7 @@ function registerButtonHandlers() {
         } else {
             liff.sendMessages([{
                 'type': 'text',
-                'text': ('Barang Belanjaan Anda Sudah Disimpan, ini adalah rinciannya : ' + $('#lihat-data'))
+                'text': `Barang Belanjaan Anda Sudah Disimpan, ini adalah rinciannya : ${lihat-data}`
             }]).then(function () {
                 window.alert('List Belanjaan anda sudah dikirimkan.');
             }).catch(function (error) {
