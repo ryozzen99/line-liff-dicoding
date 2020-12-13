@@ -139,7 +139,7 @@ function registerButtonHandlers() {
         } else {
             liff.sendMessages([{
                 'type': 'text',
-                'text': ('Barang Belanjaan Anda Sudah Disimpan, ini adalah rinciannya : ' + $('#nama'))
+                'text': ('Barang Belanjaan Anda Sudah Disimpan, ini adalah rinciannya : ' + $nama)
             }]).then(function() {
                 window.alert('List Belanjaan anda sudah dikirimkan.');
             }).catch(function(error) {
