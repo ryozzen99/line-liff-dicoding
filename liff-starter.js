@@ -53,6 +53,7 @@ function initializeLiff(myLiffId) {
         })
         .then(() => {
             // start to use LIFF's api
+            initializeApp();
             liff.getProfile()
                 .then(profile => {
                     const name = profile.displayName
@@ -61,7 +62,6 @@ function initializeLiff(myLiffId) {
                 .catch((err) => {
                     console.log('error', err);
                 });
-            initializeApp();
         })
 
         .catch((err) => {
