@@ -89,7 +89,8 @@ function displayLiffData() {
     })
     .catch((err) => {
       console.log('error', err);
-    })}
+    });
+}
 
 /**
 * Toggle the login/logout buttons based on the isInClient status, and display a message accordingly
