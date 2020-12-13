@@ -6,12 +6,12 @@ function loadCatatan() {
             data_app = '<table class="table table-striped table-dark">';
             data_app += '<thead>' +
                 '<th>ID</th>' +
-                '<th>Nama</th>' +
-                '<th>Tanggal</th>' +
-                '<th>Agenda</th>' +
-                '<th>Hapus Agenda</th>' +
-                '<th>Lihat Agenda</th>' +
-                '<th>Edit Agenda</th>' +
+                '<th>Nama Barang</th>' +
+                // '<th>Tanggal</th>' +
+                '<th>Jumalah Beli</th>' +
+                '<th>Hapus</th>' +
+                '<th>Lihat</th>' +
+                '<th>Edit</th>' +
                 '</thead> <tbody>';
 
             for (i in list_data) {
@@ -19,7 +19,7 @@ function loadCatatan() {
                 data_app +=
                     '<td>' + list_data[i].id_data + ' </td>' +
                     '<td>' + list_data[i].nama + ' </td>' +
-                    '<td>' + list_data[i].tanggal + ' </td>' +
+                    // '<td>' + list_data[i].tanggal + ' </td>' +
                     '<td>' + list_data[i].agenda + ' </td>' +
                     '<td><a class="btn btn-danger btn-small" href="javascript:void(0)" onclick="hapusData(\'' + list_data[i].id_data + '\')">Hapus</a></td>' +
                     '<td><a class="btn btn-danger btn-small" href="javascript:void(0)" onclick="lihatData(\'' + list_data[i].id_data + '\')">Lihat</a></td>' +
@@ -50,7 +50,7 @@ function editData(id) {
             if (list_data[i].id_data == id) {
                 $("#eid_data").val(list_data[i].id_data);
                 $("#enama").val(list_data[i].nama);
-                $("#etanggal").val(list_data[i].tanggal);
+                // $("#etanggal").val(list_data[i].tanggal);
                 $("#eagenda").val(list_data[i].agenda);
                 list_data.splice(idx_data, 1);
             }
@@ -70,7 +70,7 @@ function lihatData(id) {
             if (list_data[i].id_data == id) {
                 $("#lid_data").val(list_data[i].id_data);
                 $("#lnama").val(list_data[i].nama);
-                $("#ltanggal").val(list_data[i].tanggal);
+                // $("#ltanggal").val(list_data[i].tanggal);
                 $("#lagenda").val(list_data[i].agenda);
                 list_data.splice(idx_data, 1);
             }
@@ -98,7 +98,7 @@ function simpanData() {
     }
 
     nama = $('#nama').val();
-    tanggal = $('#tanggal').val();
+    // tanggal = $('#tanggal').val();
     agenda = $('#agenda').val();
 
     if (localStorage.list_data && localStorage.id_data) {
@@ -111,7 +111,7 @@ function simpanData() {
     }
 
     id_data++;
-    list_data.push({ 'id_data': id_data, 'nama': nama, 'tanggal': tanggal, 'agenda': agenda });
+    list_data.push({ 'id_data': id_data, 'nama': nama, 'agenda': agenda });
     localStorage.setItem('list_data', JSON.stringify(list_data));
     localStorage.setItem('id_data', id_data);
     document.getElementById('form-data').reset();
@@ -137,10 +137,10 @@ function simpanEditData() {
 
     id_data = $('#eid_data').val();
     nama = $('#enama').val();
-    tanggal = $('#etanggal').val();
+    // tanggal = $('#etanggal').val();
     agenda = $('#eagenda').val();
 
-    list_data.push({ 'id_data': id_data, 'nama': nama, 'tanggal': tanggal, 'agenda': agenda });
+    list_data.push({ 'id_data': id_data, 'nama': nama, 'agenda': agenda });
     localStorage.setItem('list_data', JSON.stringify(list_data));
     document.getElementById('eform-data').reset();
     gantiMenu('list-catatan');
