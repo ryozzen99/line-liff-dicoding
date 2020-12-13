@@ -135,9 +135,9 @@ function registerButtonHandlers() {
         } else {
             liff.sendMessages([{
                 'type': 'text',
-                'text': "Pesan telah dikirimkan."
+                'text': "Barang Belanjaan Anda Sudah Disimpan, ini adalah rinciannya : "
             }]).then(function() {
-                window.alert('Ini adalah pesan dari fitur Send Message');
+                window.alert('List Belanjaan anda sudah dikirimkan.');
             }).catch(function(error) {
                 window.alert('Error sending message: ' + error);
             });
