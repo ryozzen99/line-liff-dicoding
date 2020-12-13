@@ -139,30 +139,7 @@ function registerButtonHandlers() {
         } else {
             liff.sendMessages([{
                 'type': 'text',
-                // 'text': 'Barang Belanjaan Anda Sudah Disimpan, ini adalah rinciannya. \n\nPesanan Anda : ' + list_data[i].nama + ' ' + list_data[i].agenda
-                'text': 'Barang Belanjaan Anda Sudah Disimpan, ini adalah rinciannya. \n\nPesanan Anda : ' +
-
-                    function loadCatatan() {
-                        if (localStorage.list_data && localStorage.id_data) {
-                            list_data = JSON.parse(localStorage.getItem('list_data'));
-                            var data_app = "";
-                            if (list_data.length > 0) {
-                                for (i in list_data) {
-                                    data_app +=
-                                        list_data[i].nama +
-                                        list_data[i].agenda
-                                }
-
-                            } else {
-                                data_app = "Barang masih kosong nih";
-                            }
-
-
-                            $('#list-catatan').html(data_app);
-                            $('#list-catatan').hide();
-                            $('#list-catatan').fadeIn(100);
-                        }
-                    }
+                'text': 'Barang Belanjaan Anda Sudah Disimpan, ini adalah rinciannya. \n\nPesanan Anda : ' + list_data[i].nama + ' ' + list_data[i].agenda
 
             }]).then(function () {
                 window.alert('List Belanjaan anda sudah dikirimkan.');
