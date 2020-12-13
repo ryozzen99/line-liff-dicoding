@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Catatan Harianku</title>
+    <title>Daftar Belanjaan</title>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -24,7 +24,7 @@
     <div class="col-xs-12 col-md-8 col-md-offset-2" ng-controller="listContactCtrl">
         <div class="page-header">
             <h1 align="center">
-                Catatan Harianku
+                Daftar Belanjaan
             </h1>
             <ul class="nav nav-pills">
                 <li><a id="nav-list-catatan" href="javascript:void(0);" onclick="gantiMenu('list-catatan');">List Catatan</a></li>
@@ -35,15 +35,15 @@
         <div id="tambah-catatan" class="well" style="display:none;">
             <form id="form-data">
                 <div id="nama-group" class="form-group">
-                    <label>Nama:</label>
+                    <label>Nama Barang:</label>
                     <input type="text" class="form-control" id="nama" name="nama">
                 </div>
-                <div id="tanggal-group" class="form-group">
+                <!-- <div id="tanggal-group" class="form-group">
                     <label>Tanggal:</label>
                     <input type="text" class="form-control" id="tanggal" name="tanggal">
-                </div>
+                </div> -->
                 <div id="agenda-group" class="form-group">
-                    <label>Agenda:</label>
+                    <label>Jumlah Beli:</label>
                     <textarea class="form-control" id="agenda" name="agenda"></textarea><br />
                 </div>
                 <input type="button" value="Simpan" onclick="simpanData();" class="btn btn-success btn-small" />
@@ -60,15 +60,15 @@
                 </div>
 
                 <div id="nama-group" class="form-group">
-                    <label>Nama:</label>
+                    <label>Nama Barang:</label>
                     <input type="text" class="form-control" id="enama" name="nama">
                 </div>
-                <div id="tanggal-group" class="form-group">
+                <!-- <div id="tanggal-group" class="form-group">
                     <label>Tanggal:</label>
                     <input type="text" class="form-control" id="etanggal" name="tanggal">
-                </div>
+                </div> -->
                 <div id="agenda-group" class="form-group">
-                    <label>Agenda:</label>
+                    <label>Jumlah Beli:</label>
                     <textarea class="form-control" id="eagenda" name="agenda"></textarea><br />
                 </div>
                 <input type="button" value="Simpan" onclick="simpanEditData();" class="btn btn-success btn-small" />
@@ -87,15 +87,15 @@
                 </div>
 
                 <div id="nama-group" class="form-group">
-                    <label for="disabled">Nama:</label>
+                    <label for="disabled">Nama Barang:</label>
                     <input type="text" class="form-control" id="lnama" name="nama" disabled>
                 </div>
-                <div id="tanggal-group" class="form-group">
+                <!-- <div id="tanggal-group" class="form-group">
                     <label for="disabled">Tanggal:</label>
                     <input type="text" class="form-control" id="ltanggal" name="tanggal" disabled>
-                </div>
+                </div> -->
                 <div id="agenda-group" class="form-group">
-                    <label for="disabled">Agenda:</label>
+                    <label for="disabled">Jumlah Beli:</label>
                     <textarea class="form-control" id="lagenda" name="agenda" disabled></textarea>
                 </div>
                 <input type="button" value="Kembali" onclick="gantiMenu('list-catatan');"
@@ -105,7 +105,7 @@
 
 
         <div id="list-catatan" class="well">
-            Pilih List Catatan untuk melihat catatan yang sudah dibuat.
+            Pilih Salah Satu List Barang Untuk Melihat Detail Barang.
         </div>
         <!--Konten LIFF v2-->
 
@@ -134,10 +134,11 @@
                     </tr>
                 </table>
             </div>
+
             <!-- LOGIN LOGOUT BUTTONS -->
             <div class="buttonGroup">
-                <button id="liffLoginButton" class="btn btn-success btn-small">Log in</button>
-                <button id="liffLogoutButton" class="btn btn-warning btn-small">Log out</button>
+                <button id="liffLoginButton" class="btn btn-success btn-small">Masuk</button>
+                <button id="liffLogoutButton" class="btn btn-warning btn-small">Keluar</button>
             </div>
             <div id="statusMessage">
                 <div id="isInClientMessage"></div>
@@ -149,6 +150,8 @@
                 </div>
             </div>
         </div>
+
+        
         <!-- LIFF ID ERROR -->
         <div id="liffIdErrorMessage" class="hidden">
             <p>You have not assigned any value for LIFF ID.</p>
