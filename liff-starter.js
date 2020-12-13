@@ -83,8 +83,13 @@ function initializeApp() {
 function displayLiffData() {
     document.getElementById('isInClient').textContent = liff.isInClient();
     document.getElementById('isLoggedIn').textContent = liff.isLoggedIn();
-    document.getElementById('getProfile').textContent = liff.getProfile();
-}
+    liff.getProfile()
+    .then(profile => {
+      const name = profile.displayName
+    })
+    .catch((err) => {
+      console.log('error', err);
+    })}
 
 /**
 * Toggle the login/logout buttons based on the isInClient status, and display a message accordingly
