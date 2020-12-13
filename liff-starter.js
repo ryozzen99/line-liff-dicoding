@@ -56,10 +56,14 @@ function initializeLiff(myLiffId) {
             liff.getProfile()
                 .then(profile => {
                     const name = profile.displayName
-                    $('#namaUser').html(name);
+                    $('#namaUser').text(name);
+                })
+                .catch((err) => {
+                    console.log('error', err);
                 })
             initializeApp();
         })
+
         .catch((err) => {
             document.getElementById("liffAppContent").classList.add('hidden');
             document.getElementById("liffInitErrorMessage").classList.remove('hidden');
