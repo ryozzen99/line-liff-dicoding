@@ -75,6 +75,14 @@ function initializeApp() {
     } else {
         document.getElementById('liffLogoutButton').disabled = true;
     }
+
+    liff.getProfile()
+    .then(profile => {
+      const name = profile.displayName
+    })
+    .catch((err) => {
+      console.log('error', err);
+    })
 }
 
 /**
@@ -83,13 +91,7 @@ function initializeApp() {
 function displayLiffData() {
     document.getElementById('isInClient').textContent = liff.isInClient();
     document.getElementById('isLoggedIn').textContent = liff.isLoggedIn();
-    document.getElementById('getProfile').textContent = liff.getProfile()
-    .then(profile => {
-      const name = profile.displayName
-    })
-    .catch((err) => {
-      console.log('error', err);
-    });
+    document.getElementById('getProfile').textContent = liff.getProfile();
 }
 
 /**
