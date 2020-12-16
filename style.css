@@ -10,16 +10,16 @@ table {
 
 div {
     max-width: 100%;
-    text-align: center;
+    /* text-align: center; */
 }
 
 th {
     text-align: left;
 }
 
-img { 
-    max-width: 25%; 
-    height: auto; 
+img {
+    max-width: 25%;
+    height: auto;
 }
 
 button {

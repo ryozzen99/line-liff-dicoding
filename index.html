@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Daftar Belanjaan</title>
+    <title>Jajanin</title>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -20,12 +20,39 @@
 </head>
 
 <body onload="loadCatatan();">
+    <div class="col10">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">LIFFSTRYO</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#" id="openWindowButton">Open External Window</a></li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+    </div>
+
+
     <div class="col-xs-12 col-md-8 col-md-offset-2" ng-controller="listContactCtrl">
         <div class="page-header">
-            <h1 align="center">
-                Daftar Belanjaan
+            <h1>
+                JajaninYA!
             </h1>
-            <p>Hallo <b id="namaUser"></b> !</p>
+            <p>Hallo <b id="namaUser"></b> , Selamat datang di JajaninYA!</p>
+            <p>Silahkan tulis Jajanan kamu disini Ya !</p>
             <ul class="nav nav-pills">
                 <li><a id="nav-list-catatan" href="javascript:void(0);" onclick="gantiMenu('list-catatan');">List
                         Barang</a></li>
@@ -79,15 +106,12 @@
                     class="btn btn-warning btn-small" />
             </form>
         </div>
-
         <div id="lihat-data" class="well" style="display:none;">
             <form id="eform-data">
-
                 <div id="nama-group" class="form-group" style="display:none;">
                     <label for="disabled">id data:</label>
                     <input type="text" class="form-control" id="lid_data" name="nama" disabled>
                 </div>
-
                 <div id="nama-group" class="form-group">
                     <label for="disabled">Nama Barang:</label>
                     <input type="text" class="form-control" id="lnama" name="nama" disabled>
@@ -104,44 +128,35 @@
                     class="btn btn-warning btn-small" />
             </form>
         </div>
-
-
         <div id="list-catatan" class="well">
             Pilih Salah Satu List Barang Untuk Melihat Detail Barang.
         </div>
-        <!--Konten LIFF v2-->
-
-        <div id="liffAppContent">
-            <!-- ACTION BUTTONS -->
-            <div class="buttonGroup">
-                <div class="buttonRow">
-                    <button id="openWindowButton" class="btn btn-success btn-small">Open External Window</button>
-                    <button id="closeWindowButton" class="btn btn-danger btn-small">Close LIFF App</button>
-                    <button id="sendMessageButton" class="btn btn-warning btn-small">Kirim List Terbaru</button>
-                </div>
-
+        <div class="buttonGroup">
+            <div class="buttonRow">
+                <button id="closeWindowButton" class="btn btn-danger btn-small">Close LIFF App</button>
+                <button id="sendMessageButton" class="btn btn-warning btn-small">Pesan Sekarang</button>
             </div>
-
-            <!-- LIFF DATA -->
+        </div>
+        <div id="liffAppContent">
+            <br><br>
             <div id="liffData">
-                <h3 id="liffDataHeader" class="textLeft">Informasi:</h3>
+                <h3 id="liffDataHeader" class="textLeft">Informasi User:</h3>
                 <table>
                     <tr>
-                        <th>isInClient : </th>
+                        <th>Client : </th>
                         <td id="isInClient" class="textLeft"></td>
                     </tr>
                     <tr>
-                        <th>isLoggedIn : </th>
+                        <th>Log-In : </th>
                         <td id="isLoggedIn" class="textLeft"></td>
                     </tr>
                 </table>
             </div>
 
 
-            <!-- LOGIN LOGOUT BUTTONS -->
             <div class="buttonGroup">
-                <button id="liffLoginButton" class="btn btn-success btn-small">Masuk</button>
-                <button id="liffLogoutButton" class="btn btn-warning btn-small">Keluar</button>
+                <button id="liffLoginButton" class="btn btn-success btn-small">Login</button>
+                <button id="liffLogoutButton" class="btn btn-warning btn-small">Logout</button>
             </div>
             <div id="statusMessage">
                 <div id="isInClientMessage"></div>
@@ -153,9 +168,6 @@
                 </div>
             </div>
         </div>
-
-
-        <!-- LIFF ID ERROR -->
         <div id="liffIdErrorMessage" class="hidden">
             <p>You have not assigned any value for LIFF ID.</p>
             <p>If you are running the app using Node.js, please set the LIFF ID as an environment variable in your
@@ -174,21 +186,19 @@
                     href="https://developers.line.biz/en/reference/liff/#initialize-liff-app">Initializing the LIFF
                     app</a>.</p>
         </div>
-        <!-- LIFF INIT ERROR -->
         <div id="liffInitErrorMessage" class="hidden">
             <p>Something went wrong with LIFF initialization.</p>
             <p>LIFF initialization can fail if a user clicks "Cancel" on the "Grant permission" screen, or if an error
                 occurs in the process of <code>liff.init()</code>.
         </div>
-        <!-- NODE.JS LIFF ID ERROR -->
         <div id="nodeLiffIdErrorMessage" class="hidden">
             <p>Unable to receive the LIFF ID as an environment variable.</p>
         </div>
     </div>
 </body>
-<!-- Integrasi LIFF SDK dan konfigurasi aplikasi catatan sederhana -->
+
 <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
-<script src="catatan-config.js"></script>
+<script src="dftrbelanjaan-config.js"></script>
 <script src="liff-starter.js"></script>
 
 </html>
