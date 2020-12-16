@@ -156,7 +156,25 @@ function registerButtonHandlers() {
                     // list_data[i].nama + ' ' + list_data[i].agenda
                     // $('#list-catatan').html(data_app)
                     // list_data.length > 0
-                    localStorage.getItem('list_data')
+                    // localStorage.getItem('list_data')
+                    function lihatData(id) {
+                        if (localStorage.list_data && localStorage.id_data) {
+                            list_data = JSON.parse(localStorage.getItem('list_data'));
+                            idx_data = 0;
+                            for (i in list_data) {
+                                if (list_data[i].id_data == id) {
+                                    $("#lid_data").val(list_data[i].id_data);
+                                    $("#lnama").val(list_data[i].nama);
+                                    // $("#ltanggal").val(list_data[i].tanggal);
+                                    $("#lagenda").val(list_data[i].agenda);
+                                    list_data.splice(idx_data, 1);
+                                }
+                                idx_data++;
+                            }
+                            gantiMenu('lihat-data');
+
+                        }
+                    }
             }]).then(function () {
                 window.alert('List Belanjaan anda sudah dikirimkan.');
             }).catch(function (error) {
