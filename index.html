@@ -51,8 +51,8 @@
             <h1>
                 JajaninYA!
             </h1>
-            <p>Hallo <b id="namaUser"></b> , Selamat datang di JajaninYA!</p>
-            <p>Silahkan tulis Jajanan kamu disini Ya !</p>
+            <p>Hallo <b id="namaUser"></b> , Selamat datang di JajaninYA! 6000an</p>
+            <p>Silahkan ambil Jajanan kamu disini Ya !</p>
             <ul class="nav nav-pills">
                 <li><a id="nav-list-catatan" href="javascript:void(0);" onclick="gantiMenu('list-catatan');">List
                         Barang</a></li>
@@ -64,15 +64,15 @@
         <div id="tambah-catatan" class="well" style="display:none;">
             <form id="form-data">
                 <div id="nama-group" class="form-group">
-                    <label>Serba 6 Ribu Rupiah</label>
+                    <!-- <label>Serba 6 Ribu Rupiah</label>
                     <h5 id="harga">Rp. 6000</h5>
-                    <!-- <input type="text" class="form-control" id="nama" name="nama"> -->
-                    <div class="radio">
-                        <label><input type="radio" name="nama" class="form-control" id="nama" checked>Makanan</label>
-                    </div>
-                    <div class="radio">
-                        <label><input type="radio" name="nama" class="form-control" id="nama">Minuman</label>
-                    </div>
+                    <input type="text" class="form-control" id="nama" name="nama"> -->
+                    <label>Serba 6 Ribu Rupiah</label>
+                    <h5 id="harga" name="harga">Rp. 6000</h5>
+                    <select multiple class="form-control" id="nama" name="nama">
+                        <option value="Makanan" selected>Makanan</option>
+                        <option value="Minuman">Minuman</option>
+                    </select>
                 </div>
                 <!-- <div id="tanggal-group" class="form-group">
                     <label>Tanggal:</label>

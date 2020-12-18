@@ -7,6 +7,7 @@ function loadCatatan() {
             data_app += '<thead>' +
                 '<th>Nama Barang</th>' +
                 '<th>Jumlah Beli</th>' +
+                // '<th>Total Harga</th>' +
                 '<th>Hapus</th>' +
                 '</thead> <tbody>';
 
@@ -15,6 +16,7 @@ function loadCatatan() {
                 data_app +=
                     '<td>' + list_data[i].nama + ' </td>' +
                     '<td>' + list_data[i].jumbel + ' </td>' +
+                    // '<td>' + list_data[i].harga + ' </td>' +
                     '<td><a class="btn btn-danger btn-small" href="javascript:void(0)" onclick="hapusData(\'' + list_data[i].id_data + '\')">Hapus</a></td>';
                 data_app += '</tr>';
             }
@@ -88,6 +90,8 @@ function simpanData() {
 
     nama = $('#nama').val();
     jumbel = $('#jumbel').val();
+    harga = $('harga').val();
+
 
     if (localStorage.list_data && localStorage.id_data) {
         list_data = JSON.parse(localStorage.getItem('list_data'));
@@ -101,7 +105,8 @@ function simpanData() {
     list_data.push({
         'id_data': id_data,
         'nama': nama,
-        'jumbel': jumbel
+        'jumbel': jumbel,
+        'harga': harga
     });
     localStorage.setItem('list_data', JSON.stringify(list_data));
     localStorage.setItem('id_data', id_data);
