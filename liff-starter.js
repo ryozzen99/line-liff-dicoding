@@ -152,7 +152,7 @@ function registerButtonHandlers() {
         } else {
             liff.sendMessages([{
                 'type': 'text',
-                'text': 'Barang Belanjaan Anda Sudah Disimpan, ini adalah rinciannya. \n\nPesanan Anda : \n' +
+                'text': 'Barang Belanjaan Anda Sudah Disimpan, ini adalah rinciannya. \n\nPesanan Anda : ' + '\n' +
                     // Pakai ini hasilnya cuma data terbaru saja
                     // list_data[i].nama + ' ' + list_data[i].agenda
                     // ini error
