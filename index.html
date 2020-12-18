@@ -73,7 +73,14 @@
                 </div> -->
                 <div id="agenda-group" class="form-group">
                     <label>Jumlah Beli:</label>
-                    <textarea class="form-control" id="agenda" name="agenda"></textarea><br />
+                    <!-- <textarea class="form-control" id="agenda" name="agenda"></textarea><br /> -->
+                    <select multiple class="form-control" id="agenda" name="agenda">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3" selected>3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
                 </div>
                 <input type="button" value="Simpan" onclick="simpanData();" class="btn btn-success btn-small" />
                 <input type="reset" value="Reset" onclick="" class="btn btn-warning btn-small" />
