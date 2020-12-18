@@ -152,17 +152,19 @@ function registerButtonHandlers() {
         } else {
             liff.sendMessages([{
                 'type': 'text',
-                'text': 'Barang Belanjaan Anda Sudah Disimpan, ini adalah rinciannya. \n\nPesanan Anda : ' +
+                'text': 'Barang Belanjaan Anda Sudah Disimpan, ini adalah rinciannya. \n\nPesanan Anda : \n' +
                     // Pakai ini hasilnya cuma data terbaru saja
                     // list_data[i].nama + ' ' + list_data[i].agenda
                     // ini error
                     // $('#list-catatan').html(data_app)
-                    // ini null
+                    // ini false
                     // list_data.length > 0
+                    // ini work !
                     list_data.map(({
                         nama,
                         agenda
                     }) => nama + ': ' + agenda).join('\n')
+
             }]).then(function () {
                 window.alert('List Belanjaan anda sudah dikirimkan.');
             }).catch(function (error) {
