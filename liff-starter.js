@@ -154,50 +154,9 @@ function registerButtonHandlers() {
                 'type': 'text',
                 'text': 'Barang Belanjaan Anda Sudah Disimpan, ini adalah rinciannya. \n\nPesanan Anda : ' +
                     // list_data[i].nama + ' ' + list_data[i].agenda
-                    // $('#list-catatan').html(data_app)
-                    // list_data.length > 0
-                    // localStorage.getItem('list_data')
-                    function loadCatatan() {
-                        if (localStorage.list_data && localStorage.id_data) {
-                            list_data = JSON.parse(localStorage.getItem('list_data'));
-                            var data_app = "";
-                            if (list_data.length > 0) {
-                                data_app = '<table class="table table-striped table-dark">';
-                                data_app += '<thead>' +
-                                    '<th>ID</th>' +
-                                    '<th>Nama Barang</th>' +
-                                    // '<th>Tanggal</th>' +
-                                    '<th>Jumalah Beli</th>' +
-                                    '<th>Hapus</th>' +
-                                    '<th>Lihat</th>' +
-                                    '<th>Edit</th>' +
-                                    '</thead> <tbody>';
-
-                                for (i in list_data) {
-                                    data_app += '<tr>';
-                                    data_app +=
-                                        '<td>' + list_data[i].id_data + ' </td>' +
-                                        '<td>' + list_data[i].nama + ' </td>' +
-                                        // '<td>' + list_data[i].tanggal + ' </td>' +
-                                        '<td>' + list_data[i].agenda + ' </td>' +
-                                        '<td><a class="btn btn-danger btn-small" href="javascript:void(0)" onclick="hapusData(\'' + list_data[i].id_data + '\')">Hapus</a></td>' +
-                                        '<td><a class="btn btn-danger btn-small" href="javascript:void(0)" onclick="lihatData(\'' + list_data[i].id_data + '\')">Lihat</a></td>' +
-                                        '<td><a class="btn btn-warning btn-small" href="javascript:void(0)" onclick="editData(\'' + list_data[i].id_data + '\')">Edit</a></td>';
-                                    data_app += '</tr>';
-                                }
-
-                                data_app += '</tbody></table>';
-
-                            } else {
-                                data_app = "Barang masih kosong nih";
-                            }
-
-
-                            $('#list-catatan').html(data_app);
-                            $('#list-catatan').hide();
-                            $('#list-catatan').fadeIn(100);
-                        }
-                    }
+                    $('#list-catatan').html(data_app)
+                // list_data.length > 0
+                // localStorage.getItem('list_data')
             }]).then(function () {
                 window.alert('List Belanjaan anda sudah dikirimkan.');
             }).catch(function (error) {
