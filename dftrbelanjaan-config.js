@@ -8,7 +8,6 @@ function loadCatatan() {
                 '<th>Nama Barang</th>' +
                 '<th>Jumlah Beli</th>' +
                 '<th>Hapus</th>' +
-                '<th>Ubah</th>' +
                 '</thead> <tbody>';
 
             for (i in list_data) {
@@ -16,8 +15,7 @@ function loadCatatan() {
                 data_app +=
                     '<td>' + list_data[i].nama + ' </td>' +
                     '<td>' + list_data[i].agenda + ' </td>' +
-                    '<td><a class="btn btn-danger btn-small" href="javascript:void(0)" onclick="hapusData(\'' + list_data[i].id_data + '\')">Hapus</a></td>' +
-                    '<td><a class="btn btn-warning btn-small" href="javascript:void(0)" onclick="editData(\'' + list_data[i].id_data + '\')">Ubah</a></td>';
+                    '<td><a class="btn btn-danger btn-small" href="javascript:void(0)" onclick="hapusData(\'' + list_data[i].id_data + '\')">Hapus</a></td>';
                 data_app += '</tr>';
             }
 
