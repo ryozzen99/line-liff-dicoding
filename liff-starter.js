@@ -153,10 +153,13 @@ function registerButtonHandlers() {
             liff.sendMessages([{
                 'type': 'text',
                 'text': 'Barang Belanjaan Anda Sudah Disimpan, ini adalah rinciannya. \n\nPesanan Anda : ' +
+                    // Pakai ini hasilnya cuma data terbaru saja
                     // list_data[i].nama + ' ' + list_data[i].agenda
+                    // ini error
                     // $('#list-catatan').html(data_app)
+                    // ini null
                     // list_data.length > 0
-                    getItem.map(({
+                    list_data.map(({
                         nama,
                         agenda
                     }) => nama + ': ' + agenda).join('\n')
