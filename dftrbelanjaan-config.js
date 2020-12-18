@@ -5,13 +5,13 @@ function loadCatatan() {
         if (list_data.length > 0) {
             data_app = '<table class="table table-striped table-dark">';
             data_app += '<thead>' +
-                '<th>ID</th>' +
+                // '<th>ID</th>' +
                 '<th>Nama Barang</th>' +
                 // '<th>Tanggal</th>' +
                 '<th>Jumalah Beli</th>' +
                 '<th>Hapus</th>' +
-                '<th>Lihat</th>' +
-                '<th>Edit</th>' +
+                // '<th>Lihat</th>' +
+                '<th>Ubah</th>' +
                 '</thead> <tbody>';
 
             for (i in list_data) {
@@ -29,8 +29,7 @@ function loadCatatan() {
 
             data_app += '</tbody></table>';
 
-        }
-        else {
+        } else {
             data_app = "Barang masih kosong nih";
         }
 
@@ -90,9 +89,9 @@ function simpanData() {
         liff.sendMessages([{
             'type': 'text',
             'text': "Data berhasil disimpan"
-        }]).then(function() {
+        }]).then(function () {
             alert('Barang Tersimpan');
-        }).catch(function(error) {
+        }).catch(function (error) {
             alert('Data Error');
         });
     }
@@ -104,14 +103,17 @@ function simpanData() {
     if (localStorage.list_data && localStorage.id_data) {
         list_data = JSON.parse(localStorage.getItem('list_data'));
         id_data = parseInt(localStorage.getItem('id_data'));
-    }
-    else {
+    } else {
         list_data = [];
         id_data = 0;
     }
 
     id_data++;
-    list_data.push({ 'id_data': id_data, 'nama': nama, 'agenda': agenda });
+    list_data.push({
+        'id_data': id_data,
+        'nama': nama,
+        'agenda': agenda
+    });
     localStorage.setItem('list_data', JSON.stringify(list_data));
     localStorage.setItem('id_data', id_data);
     document.getElementById('form-data').reset();
@@ -128,9 +130,9 @@ function simpanEditData() {
         liff.sendMessages([{
             'type': 'text',
             'text': "Barang Di Ubah"
-        }]).then(function() {
+        }]).then(function () {
             alert('Barang tersimpan');
-        }).catch(function(error) {
+        }).catch(function (error) {
             alert('Data Error');
         });
     }
@@ -140,7 +142,11 @@ function simpanEditData() {
     // tanggal = $('#etanggal').val();
     agenda = $('#eagenda').val();
 
-    list_data.push({ 'id_data': id_data, 'nama': nama, 'agenda': agenda });
+    list_data.push({
+        'id_data': id_data,
+        'nama': nama,
+        'agenda': agenda
+    });
     localStorage.setItem('list_data', JSON.stringify(list_data));
     document.getElementById('eform-data').reset();
     gantiMenu('list-catatan');
@@ -156,9 +162,9 @@ function hapusData(id) {
         liff.sendMessages([{
             'type': 'text',
             'text': "Barang Dihapus"
-        }]).then(function() {
+        }]).then(function () {
             alert('Barang sudah dihapus');
-        }).catch(function(error) {
+        }).catch(function (error) {
             alert('Data Error');
         });
     }
@@ -187,8 +193,7 @@ function gantiMenu(menu) {
         $('#list-catatan').fadeIn();
         $('#edit-data').hide();
         $('#lihat-data').hide();
-    }
-    else if (menu == "tambah-catatan") {
+    } else if (menu == "tambah-catatan") {
         $('#tambah-catatan').fadeIn();
         $('#list-catatan').hide();
         $('#edit-data').hide();
