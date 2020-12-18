@@ -14,7 +14,7 @@ function loadCatatan() {
                 data_app += '<tr>';
                 data_app +=
                     '<td>' + list_data[i].nama + ' </td>' +
-                    '<td>' + list_data[i].agenda + ' </td>' +
+                    '<td>' + list_data[i].jumbel + ' </td>' +
                     '<td><a class="btn btn-danger btn-small" href="javascript:void(0)" onclick="hapusData(\'' + list_data[i].id_data + '\')">Hapus</a></td>';
                 data_app += '</tr>';
             }
@@ -41,7 +41,7 @@ function editData(id) {
             if (list_data[i].id_data == id) {
                 $("#eid_data").val(list_data[i].id_data);
                 $("#enama").val(list_data[i].nama);
-                $("#eagenda").val(list_data[i].agenda);
+                $("#ejumbel").val(list_data[i].jumbel);
                 list_data.splice(idx_data, 1);
             }
             idx_data++;
@@ -60,7 +60,7 @@ function lihatData(id) {
             if (list_data[i].id_data == id) {
                 $("#lid_data").val(list_data[i].id_data);
                 $("#lnama").val(list_data[i].nama);
-                $("#lagenda").val(list_data[i].agenda);
+                $("#ljumbel").val(list_data[i].jumbel);
                 list_data.splice(idx_data, 1);
             }
             idx_data++;
@@ -87,7 +87,7 @@ function simpanData() {
     }
 
     nama = $('#nama').val();
-    agenda = $('#agenda').val();
+    jumbel = $('#jumbel').val();
 
     if (localStorage.list_data && localStorage.id_data) {
         list_data = JSON.parse(localStorage.getItem('list_data'));
@@ -101,7 +101,7 @@ function simpanData() {
     list_data.push({
         'id_data': id_data,
         'nama': nama,
-        'agenda': agenda
+        'jumbel': jumbel
     });
     localStorage.setItem('list_data', JSON.stringify(list_data));
     localStorage.setItem('id_data', id_data);
@@ -128,12 +128,12 @@ function simpanEditData() {
 
     id_data = $('#eid_data').val();
     nama = $('#enama').val();
-    agenda = $('#eagenda').val();
+    jumbel = $('#ejumbel').val();
 
     list_data.push({
         'id_data': id_data,
         'nama': nama,
-        'agenda': agenda
+        'jumbel': jumbel
     });
     localStorage.setItem('list_data', JSON.stringify(list_data));
     document.getElementById('eform-data').reset();

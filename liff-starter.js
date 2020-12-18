@@ -154,7 +154,7 @@ function registerButtonHandlers() {
                 'type': 'text',
                 'text': 'Barang Belanjaan Anda Sudah Disimpan, ini adalah rinciannya. \n\nPesanan Anda : ' + '\n' +
                     // Pakai ini hasilnya cuma data terbaru saja
-                    // list_data[i].nama + ' ' + list_data[i].agenda
+                    // list_data[i].nama + ' ' + list_data[i].jumbel
                     // ini error
                     // $('#list-catatan').html(data_app)
                     // ini false
@@ -162,8 +162,8 @@ function registerButtonHandlers() {
                     // ini work !
                     list_data.map(({
                         nama,
-                        agenda
-                    }) => nama + ' : ' + agenda).join('\n')
+                        jumbel
+                    }) => nama + ' : ' + jumbel).join('\n')
 
             }]).then(function () {
                 window.alert('List Belanjaan anda sudah dikirimkan.');
