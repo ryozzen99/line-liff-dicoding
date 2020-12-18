@@ -6,7 +6,7 @@ function loadCatatan() {
             data_app = '<table class="table table-striped table-dark">';
             data_app += '<thead>' +
                 '<th>Nama Barang</th>' +
-                '<th>Jumalah Beli</th>' +
+                '<th>Jumlah Beli</th>' +
                 '<th>Hapus</th>' +
                 '<th>Ubah</th>' +
                 '</thead> <tbody>';
