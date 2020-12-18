@@ -156,7 +156,7 @@ function registerButtonHandlers() {
                     // list_data[i].nama + ' ' + list_data[i].agenda
                     // $('#list-catatan').html(data_app)
                     // list_data.length > 0
-                    localStorage.getItem(({
+                    getItem.map(({
                         nama,
                         agenda
                     }) => nama + ': ' + agenda).join('\n')
