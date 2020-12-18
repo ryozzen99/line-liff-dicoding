@@ -163,7 +163,7 @@ function registerButtonHandlers() {
                     list_data.map(({
                         nama,
                         agenda
-                    }) => nama + ': ' + agenda).join('\n')
+                    }) => nama + ' : ' + agenda).join('\n')
 
             }]).then(function () {
                 window.alert('List Belanjaan anda sudah dikirimkan.');
