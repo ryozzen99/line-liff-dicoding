@@ -154,8 +154,8 @@ function registerButtonHandlers() {
                 'type': 'text',
                 'text': 'Barang Belanjaan Anda Sudah Disimpan, ini adalah rinciannya. \n\nPesanan Anda : ' +
                     // list_data[i].nama + ' ' + list_data[i].agenda
-                    $('#list-catatan').html(data_app)
-                // list_data.length > 0
+                    // $('#list-catatan').html(data_app)
+                    list_data.length > 0
                 // localStorage.getItem('list_data')
             }]).then(function () {
                 window.alert('List Belanjaan anda sudah dikirimkan.');
