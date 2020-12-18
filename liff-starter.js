@@ -156,7 +156,7 @@ function registerButtonHandlers() {
                     // list_data[i].nama + ' ' + list_data[i].agenda
                     // $('#list-catatan').html(data_app)
                     // list_data.length > 0
-                    localStorage.getItem('list_data')
+                    localStorage.getItem("list_data[i].nama + ' ' + list_data[i].agenda")
             }]).then(function () {
                 window.alert('List Belanjaan anda sudah dikirimkan.');
             }).catch(function (error) {
